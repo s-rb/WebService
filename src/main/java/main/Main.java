@@ -10,6 +10,10 @@ import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import resourceServer.ResourceServer;
+import resourceServer.ResourceServerController;
+import resourceServer.ResourceServerControllerMBean;
+import resourceServer.ResourceServerInt;
 import services.AccountService;
 import servlets.*;
 
@@ -45,6 +49,10 @@ public class Main
         context.addServlet(new ServletHolder(new AdminPageServlet(accountServer)), "/admin");
         context.addServlet(new ServletHolder(new HomePageServlet(accountServer)), "/home");
 
+        // 6 Resources
+        ResourceServerInt resourceServer = new ResourceServer();
+        context.addServlet(new ServletHolder(new ResourcesPageServlet(resourceServer)), "/resources");
+
         ResourceHandler resourceHandler = new ResourceHandler();
         resourceHandler.setDirectoriesListed(true);
 //        resourceHandler.setResourceBase("public_html");
@@ -57,6 +65,10 @@ public class Main
         MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
         ObjectName name = new ObjectName("Admin:type=AccountServerController");
         mbs.registerMBean(serverStatistics, name);
+
+        ResourceServerControllerMBean serverResource = new ResourceServerController(resourceServer);
+        ObjectName resName = new ObjectName("Admin:type=ResourceServerController");
+        mbs.registerMBean(serverResource, resName);
 
         // создаем и запускаем сервер (порт был 8080, теперь задается в аргументах)
         Server server = new Server(port);
