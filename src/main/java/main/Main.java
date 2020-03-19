@@ -16,6 +16,7 @@ import resourceServer.ResourceServerControllerMBean;
 import resourceServer.ResourceServerInt;
 import services.AccountService;
 import servlets.*;
+import simpleChatServer.VerySimpleChatServer;
 
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
@@ -78,5 +79,8 @@ public class Main
         logger.info("Server started");
         System.err.println("Server started"); // вывод с паузой 500для запуска программы проверки работы
         server.join();
+
+        //Very Simple Chat Server
+        new VerySimpleChatServer(5050).go();
     }
 }
