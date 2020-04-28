@@ -1,3 +1,0 @@
-[03-14 20:43:06,616, 1952] main.Main Starting at http://127.0.0.1:8080
-[03-14 20:43:08,697, 4033] main.Main Server started
-[03-14 20:44:11,634, 66970] servlets.HomePageServlet Limit: 100. Count 0
