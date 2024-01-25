@@ -1,20 +1,17 @@
 # WebService
 
-Сборка всех выполненных заданий в одном файле по курсу Mail.ru Group "Разработка веб-сервиса" на учебной платформе Stepik.
+Collection of all completed tasks in one file for the Mail.ru Group course "Web service development" on the Stepik training platform.
 
-Основные особенности:
-- [Maven](pom.xml) - зависимости и сборка проекта
-- Jetty - сервер ([вебсокеты](src/main/java/chat), [сделан чат](src/main/java/simpleChatServer))
-- [Freemaker](src/main/java/templater/PageGenerator.java) - шаблонизатор
-- GSON библиотека для работы с JSON
-- [Сервлеты (extends HttpServlet)](src/main/java/servlets) для получения Requests и обработки Response
-- [SAXparser для работы с XML файлами](src/main/java/sax/ReadXMLFileSAX.java)
-- [Reflection](src/main/java/reflection) - создание объекта заданного класса из XML файла
-- Log4j2 - логгирование
-- MySQL - бд
-- Hibarnate - сущности и запросы к БД. [конфигурация](src/main/java/services/DBService.java)
-
-При запуске работает чат, форма логина.
-После получения POST запроса с формы логина, происходит обращение в БД в поисках профиля юзера.
-
-Внимание! Проект учебный, нецелостный, код в комментариях-пояснениях (грязный).
+Key Features:
+- [Maven](pom.xml) - dependencies and project build
+- Jetty - server ([websockets](src/main/java/chat), [chat](src/main/java/simpleChatServer))
+- [Freemaker](src/main/java/templater/PageGenerator.java) - template engine
+- GSON library for working with JSON
+- [Servlets (extends HttpServlet)](src/main/java/servlets) for receiving Requests and processing Response
+- [SAXparser for working with XML files](src/main/java/sax/ReadXMLFileSAX.java)
+- [Reflection](src/main/java/reflection) - creating an object of a given class from an XML file
+- Log4j2 - logging
+- MySQL - database
+- Hibernate - entities and queries to the database. [configuration](src/main/java/services/DBService.java)
+When you start, the chat and login form work.
+After receiving a POST request from the login form, the database is contacted in search of the user profile.

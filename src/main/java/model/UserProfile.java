@@ -7,8 +7,6 @@ import java.io.Serializable;
 @Table(name = "users")
 public class UserProfile implements Serializable { // Serializable Important to Hibernate!
 
-//    private static final long serialVersionUID = -8706689714326132798L; // Нужно ли?
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

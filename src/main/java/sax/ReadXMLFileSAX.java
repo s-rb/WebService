@@ -10,7 +10,6 @@ public class ReadXMLFileSAX {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
 
-            //LogSaxHandler handler = new LogSaxHandler();
             SaxHandler handler = new SaxHandler();
             saxParser.parse(xmlFile, handler);
             return handler.getObject();

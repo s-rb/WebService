@@ -18,6 +18,11 @@ import java.sql.SQLException;
 
 public class DBService {
 
+    public static final String DB_HOST = "localhost";
+    public static final String DB_NAME = "webservice";
+    public static final String DB_USER = "mysqladmin";
+    public static final String DB_PASSWORD = "mysqlpassword";
+
     private static final String hibernate_show_sql = "true";
     private static final String hibernate_hbm2ddl_auto = "update";
 
@@ -34,16 +39,16 @@ public class DBService {
 
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         configuration.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver");
-        configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/webservice?serverTimezone=UTC");
-        configuration.setProperty("hibernate.connection.username", "root");
-        configuration.setProperty("hibernate.connection.password", "testtest");
+        configuration.setProperty("hibernate.connection.url", "jdbc:mysql://" + DB_HOST + ":3306/" + DB_NAME + "?serverTimezone=UTC");
+        configuration.setProperty("hibernate.connection.username", DB_USER);
+        configuration.setProperty("hibernate.connection.password", DB_PASSWORD);
         configuration.setProperty("hibernate.show_sql", hibernate_show_sql);
         configuration.setProperty("hibernate.hbm2ddl.auto", hibernate_hbm2ddl_auto);
         return configuration;
     }
 
     @SuppressWarnings("UnusedDeclaration")
-    private Configuration getH2Configuration() {
+    private Configuration getH2Conxfigxuration() {
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(UserProfile.class);
 

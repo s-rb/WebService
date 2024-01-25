@@ -16,7 +16,6 @@
         <org.hibernate.hibernate-core.version>4.3.10.Final</org.hibernate.hibernate-core.version>
         <junit.version>4.12</junit.version>
         <org.mockito.version>1.8.4</org.mockito.version>
-<!--        <org.eclipse.jetty.version>9.3.0.M0</org.eclipse.jetty.version>-->
     </properties>
 
     <build>

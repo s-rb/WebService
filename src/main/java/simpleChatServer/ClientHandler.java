@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-// TODO: Переделать на неблокирующие сокеты из NIO
 public class ClientHandler implements Runnable {
 
     private BufferedReader reader;

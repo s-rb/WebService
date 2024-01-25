@@ -49,8 +49,5 @@ public class HomePageServlet extends HttpServlet {
             response.getWriter().println("Server is closed for maintenance!");
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
         }
-
-
-
     }
 }
